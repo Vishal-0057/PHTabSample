@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BViewController.h
 //  PHTabSample
 //
 //  Created by abhayam rastogi on 5/19/15.
@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "PHViewController.h"
 
-@interface ViewController : PHViewController
-
+@interface BViewController : PHViewController
 
 @end
-

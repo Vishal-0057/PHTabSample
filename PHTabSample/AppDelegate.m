@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "AViewController.h"
+#import "BViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +20,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.phview = [[PHViewController alloc] init];
+    self.navcon = [[UINavigationController alloc] initWithRootViewController:self.phview];
+    self.phmenuview = [[PHMenuViewController alloc] initWithRootViewController:self.navcon atIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+//    self.tabBarC = [[UITabBarController alloc] init];
+//    AViewController *aVC = [[AViewController alloc] initWithNibName:@"AViewController" bundle:nil];
+//    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:aVC];
+//    [nav1 setTabBarItem:[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemContacts tag:0]];
+//    
+//    BViewController *bVC = [[BViewController alloc] initWithNibName:@"BViewController" bundle:nil];
+//    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:bVC];
+//    [nav2 setTabBarItem:[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemDownloads tag:1]];
+//    
+//    self.tabBarC.viewControllers = [NSArray arrayWithObjects:nav1, nav2, nil];
+//    [self.window setRootViewController:self.tabBarC];
+//    [self.tabBarC setSelectedIndex:0];
+    
+    
+    [self.window setRootViewController:self.phmenuview];
+    [self.phmenuview didSelectRowAtIndex:[NSIndexPath indexPathForRow:0 inSection:0 ]];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
